@@ -1,0 +1,229 @@
+
+
+@import url("https://fonts.googleapis.com/css?family=Fira+Mono:400");
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: radial-gradient(circle, #131111 0%, black 17%, black 27%);
+  height: 100vh;
+  font-family: "Fira Mono", monospace;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.cursor {
+
+  width: 40px;
+  height: 40px;
+  border: 3px solid #00c3ff;
+  border-radius: 50%;
+  position: absolute;
+  box-shadow: 2px -3px 41px -1px rgb(126, 154, 194);
+  pointer-events: none;
+}
+
+.side-menu {
+  width: 200px;
+  height: 100vh;
+  position: absolute;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.side-menu #menuBtn {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 99;
+  height: auto;
+}
+.side-menu #menuBtn input {
+  display: block;
+  cursor: pointer;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  z-index: 9;
+  top: 10px;
+}
+.side-menu #menuBtn input:checked ~ span:nth-child(2) {
+  transform-style: preserve-3d;
+  animation: rotation 1s linear infinite;
+}
+@keyframes rotation {
+  0% {
+    transform: rotateX(0deg);
+  }
+  50% {
+    transform: rotateX(180deg);
+  }
+  100% {
+    transform: rotateZ(180deg);
+  }
+}
+.side-menu #menuBtn input:checked ~ span:nth-child(3) {
+  width: 21px;
+  height: 1px;
+  transform: rotate(90deg);
+}
+.side-menu #menuBtn span {
+  position: relative;
+  display: block;
+  margin: 4px 0;
+  border-radius: 2px;
+  transition: all 0.2s linear;
+}
+.side-menu #menuBtn span:nth-child(2) {
+  transform-style: preserve-3d;
+  width: 35px;
+  height: 35px;
+  border: 1px solid white;
+  border-radius: 100%;
+}
+.side-menu #menuBtn span:nth-child(3) {
+  width: 3px;
+  height: 3px;
+  background: white;
+  margin-top: -23px;
+}
+.side-menu .menu {
+  text-align: right;
+  display: none;
+}
+.side-menu .menu a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  margin: 25px 0;
+  font-size: 23px;
+}
+.side-menu .straight-line {
+  margin: 35px 0;
+  height: 2px;
+  border: 0;
+  background: linear-gradient(to right, #000000 0%, #dffff4 40%, #c1ffea 60%, #000000 100%);
+  width: 0vh;
+  left: 5%;
+  position: relative;
+  transform: translateX(-50%) rotate(90deg);
+  position: absolute;
+}
+
+.mainText {
+  width: 50%;
+  margin-left: -430px;
+  margin-top: 74px;
+}
+.mainText .mainTitle {
+  text-transform: uppercase;
+  color: #000000;
+  font-size: 60px;
+  position: relative;
+  letter-spacing: 10px;
+  position: relative;
+  display: block;
+  font-family: "Poppins", sans-serif;
+  text-transform: uppercase;
+  -webkit-text-stroke: 2px #ffffff;
+  text-stroke: 2px #ffffff;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  color: transparent;
+  transition: all 0.4s linear;
+  opacity: 0.5;
+  user-select: none;
+}
+.mainText .mainTitle:hover {
+  opacity: 1;
+  -webkit-text-fill-color: white;
+  text-fill-color: white;
+}
+.mainText .mainTitle:hover ~ .cursor {
+  transform: scale(1.4);
+  mix-blend-mode: difference;
+  background: white;
+}
+.mainText .subTitle {
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 20px;
+  position: relative;
+}
+
+.planetImg {
+  transform: scale(0.7) rotate(158deg);
+  position: absolute;
+  top: -5%;
+  right: 13%;
+  animation: float 12s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+    transform: translatey(0px) translatex(5px) scale(0.7) rotate(156deg);
+  }
+  50% {
+    box-shadow: 0 25px 15px 0px rgba(0, 0, 0, 0.2);
+    transform: translatey(-20px) translatex(-5px) scale(0.7) rotate(162deg);
+  }
+  100% {
+    box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+    transform: translatey(0px) translatex(5px) scale(0.7) rotate(156deg);
+  }
+}
+.explosion {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  position: absolute;
+  transition-duration: 10ms;
+  transition-timing-function: ease-out;
+  animation: meniItemClick 0.3s;
+}
+
+@keyframes meniItemClick {
+  0% {
+    transform: scale(0.3);
+    box-shadow: 0 0 0px 0px #9ab3f5;
+  }
+  70% {
+    transform: scale(1);
+    opacity: 0.7;
+    box-shadow: 0 0 10px 8px #9ab3f5;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+    box-shadow: 0 0 0px 0px #9ab3f5;
+  }
+}
+#WebGL-output {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.dg {
+  display: none;
+}
+
+
+
+
+
+
+
+
+
