@@ -25,3 +25,7 @@ SCSS (Sass): For enhanced, maintainable, and modular styling.
 JavaScript (ES6): Adding interactivity and handling animations.
 
 GSAP: For smooth and complex animations.
+
+![Screenshot 2024-09-15 at 4 08 15 PM](https://github.com/user-attachments/assets/0d9e9e01-ad85-4720-8c2d-553cc9256cf2)
+
+
