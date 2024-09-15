@@ -1,4 +1,4 @@
-astrox_mars
+ASTROX_MARS
 -----------
 astrox_mars is a subproject of ASTROX that focuses on Mars exploration. This project presents the "About Mars" section with cutting-edge animations and high-quality imagery, delivering a captivating and interactive experience for users. Developed using HTML, CSS, SCSS, and JavaScript, the astrox_mars header integrates visually striking designs with smooth animations.
 
